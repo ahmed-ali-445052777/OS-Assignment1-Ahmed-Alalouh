@@ -32,30 +32,43 @@ Document your development process as you work on the assignment. Add entries sho
 
 ## Your Development Log:
 
-### Entry 1 - [Date and Time]
-**What I did**: 
+### Entry 1 - [March 26, 2026, 8:45 PM]
+What I did: Set up the project and fixed Java version issues.
 
-**Details**: 
 
-**Challenges**: 
 
-**Solution**: 
+Forked the project and cloned it to VS Code.
 
-**Time spent**: 
+Changed the student ID to 445052777.
+
+Tried to run the code but it gave me errors about the Java version.
+
+Challenges: My laptop had an old Java version (JDK 8) and the project needed a newer one to run the colors and some functions properly.
+
+Solution: I had to delete the old JDK and download JDK 17. It took some time to fix the Environment Variables (PATH) so VS Code could see the new Java. After that, the code compiled perfectly.
+
+Time spent: about 1 hour .
 
 ---
 
-### Entry 2 - [Date and Time]
-**What I did**: 
+### Entry 2 - [March 26, 2026, 11:30 PM]
+What I did: Added the Priority feature.
 
-**Details**: 
 
-**Challenges**: 
 
-**Solution**: 
+Added int priority variable to the Process class.
 
-**Time spent**: 
+Updated the constructor and added a getter for it.
 
+Made the loop in main create a random priority (1 to 5) for each process.
+
+Updated the print message to show the priority.
+
+Challenges: I got some "red lines" under the code in the main method after I changed the constructor.
+
+Solution: I forgot that I added a new parameter to the Process. I fixed it by passing the priority variable in the new Process() call. Now it shows the priority in the terminal.
+
+Time spent: 1 hour.
 ---
 
 ### Entry 3 - [Date and Time]
