@@ -30,13 +30,20 @@ class Process implements Runnable {
     private int timeQuantum; // Time slice (time quantum) allowed per CPU access (in milliseconds)
     private int remainingTime; // Time left for the process to finish its execution
     private int priority;// Set process priority
+    long creationTime;    //  process was created
+    long totalWaitTime;   // total time spent in queue
+    long lastReadyTime;   // last time the process entered the ready queue
     // Constructor to initialize the process with name, burst time, and time quantum
     public Process(String name, int burstTime, int timeQuantum,int priority) {
+
         this.name = name;
         this.burstTime = burstTime;
         this.timeQuantum = timeQuantum;
         this.remainingTime = burstTime; // Initially, remaining time is equal to the burst time`
         this.priority=priority;
+        this.creationTime = System.currentTimeMillis();
+        this.lastReadyTime = this.creationTime;
+        this.totalWaitTime = 0;
     }
      //getter for priority
     public int getpriority(){
@@ -48,6 +55,8 @@ class Process implements Runnable {
     public void run() {
         // Simulate running for either the time quantum or remaining time, whichever is smaller
         int runTime = Math.min(timeQuantum, remainingTime); // Run for the smaller of the two times
+        // add the waiting time from the last time 
+        totalWaitTime += (System.currentTimeMillis() - lastReadyTime);
         
         // Show quantum execution starting
         String quantumBar = createProgressBar(0, 15);
@@ -262,6 +271,8 @@ public class SchedulerSimulation {
             if (!process.isFinished()) {
                 // If the process still has remaining time, check if there are more processes in queue
                 if (!processQueue.isEmpty()) {
+                   // record the time when the process goes back to the queue
+                process.lastReadyTime = System.currentTimeMillis();
                     // Re-enqueue the process to give it another chance to run in the next round
                     addProcessToQueue(process, processQueue, processMap);
                 } else {
@@ -286,7 +297,17 @@ public class SchedulerSimulation {
                           "╚════════════════════════════════════════════════════════════════════════════════╝" + 
                           Colors.RESET + "\n");
                           System.out.println("Total Context Switches: " + contextSwitches);
+
+
+
+                          System.out.println("\n--- SIMULATION SUMMARY ---");
+        System.out.println("Process\tBurst Time\tWaiting Time");
+        for (Process p : processMap.values()) {
+            System.out.println(p.getName() + "\t" + p.getBurstTime() + "ms\t\t" + p.totalWaitTime + "ms");
+        }
     }
+                         
+       
     
     // Method to add a process to the queue and map, while printing a "ready" message
     public static void addProcessToQueue(Process process, Queue<Thread> processQueue, 
@@ -307,5 +328,8 @@ public class SchedulerSimulation {
                           Colors.RESET + Colors.BLUE + " added to ready queue" + Colors.RESET + 
                           " │ Burst time: " + Colors.YELLOW + process.getBurstTime() + "ms" + 
                           Colors.RESET);
+                          
+       
+        }
     }
-}
+

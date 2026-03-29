@@ -71,18 +71,13 @@ Solution: I forgot that I added a new parameter to the Process. I fixed it by pa
 Time spent: 1 hour.
 ---
 
-### Entry 3 - [Date and Time]
-**What I did**: 
+### Entry 3 - [March 27- 10:40 pm]
+Today I worked on the Context Switches feature. I added a simple counter called 'contextSwitches' in the main class. 
 
-**Details**: 
+I made the counter increase by 1 every time the scheduler pulls a process from the queue to start its quantum. It was a bit confusing at first where to put the ++ exactly, but I put it right before the thread starts to make sure it counts every single switch. At the end, I added a print line to show the total number. 
 
-**Challenges**: 
-
-**Solution**: 
-
-**Time spent**: 
-
----
+It's working fine now and showing 31 switches in my last run. 
+TTime spent: 45 minutes 
 
 ### Entry 4 - [Date and Time]
 **What I did**: 
