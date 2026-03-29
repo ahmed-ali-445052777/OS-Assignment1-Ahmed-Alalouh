@@ -79,18 +79,15 @@ I made the counter increase by 1 every time the scheduler pulls a process from t
 It's working fine now and showing 31 switches in my last run. 
 TTime spent: 45 minutes 
 
-### Entry 4 - [Date and Time]
-**What I did**: 
+### Entry 4 - [March 29 -8:30 pm]
+What I worked on:
+Implemented Feature 3 by adding creationTime, lastReadyTime, and totalWaitTime to the Process class. I also developed a final summary table that displays each process’s burst time and total waiting time at the end of the simulation.
+Problems I encountered:
+I faced several compilation errors due to the constructor changes and bracket issues {} that caused "undefined" errors. Additionally, the summary table was initially repeating multiple times in the terminal instead of appearing just once.
+How I solved them:
+I refactored the constructor to be compatible with the existing code and carefully fixed the curly brackets to ensure the class structure was correct. I also moved the table printing logic to the end of the main method to ensure a clean final output.
+2:30 hours
 
-**Details**: 
-
-**Challenges**: 
-
-**Solution**: 
-
-**Time spent**: 
-
----
 
 ### Entry 5 - [Date and Time]
 **What I did**: 
