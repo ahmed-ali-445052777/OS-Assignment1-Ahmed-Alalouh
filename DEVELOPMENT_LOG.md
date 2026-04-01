@@ -86,19 +86,20 @@ Problems I encountered:
 I faced several compilation errors due to the constructor changes and bracket issues {} that caused "undefined" errors. Additionally, the summary table was initially repeating multiple times in the terminal instead of appearing just once.
 How I solved them:
 I refactored the constructor to be compatible with the existing code and carefully fixed the curly brackets to ensure the class structure was correct. I also moved the table printing logic to the end of the main method to ensure a clean final output.
-2:30 hours
+
+**Time spent**:2:30 hours
 
 
 ### Entry 5 - [Date and Time]
-**What I did**: 
+**What I did**:Finished all the reflection questions and the final assignment documentation 
 
-**Details**: 
+**Details**: I just finished answering the 4 questions about how my code works and the different thread states like New and Runnable. I also added some simple examples from real life and filled out the reflection part to explain what I learned and what was actually hard for me. After checking everything in both files, I finally did the last commit and pushed it all to my GitHub
 
-**Challenges**: 
+**Challenges**: It was a bit challenging to summarize the technical concepts clearly and make sure they perfectly match how the code executes. I also spent some time reviewing the course materials to ensure that my explanation of thread states and scheduling was accurate and reflected what we learned in class.
 
-**Solution**: 
+**Solution**: I carefully checked the simulation results in the terminal and compared them with the definitions in the lecture slides to confirm each thread state. I also made sure to use the specific terms we covered in class to keep my explanations accurate. This helped me write everything clearly and ensure my answers in both files matched the way the code actually runs.
 
-**Time spent**: 
+**Time spent**: 1:30 hours
 
 ---
 
